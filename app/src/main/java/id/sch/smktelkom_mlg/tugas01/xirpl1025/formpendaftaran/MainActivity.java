@@ -21,5 +21,18 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        etNama = (EditText) findViewById(R.id.editTextNama);
+        etTanggal = (EditText) findViewById(R.id.editTextTgl);
+        etTempat = (EditText) findViewById(R.id.editTextTempat);
+        tvHasil = (TextView) findViewById(R.id.textViewHasil);
+        rgJK = (RadioGroup) findViewById(R.id.RadioGroupJK);
+        cbTOEFL = (CheckBox) findViewById(R.id.checkBoxTOEFL);
+        cbTOEIC = (CheckBox) findViewById(R.id.checkBoxTOEIC);
+        cbIntr = (CheckBox) findViewById(R.id.checkBoxIntr);
+        cbReg = (CheckBox) findViewById(R.id.checkBoxReg);
+        spKelas = (Spinner) findViewById(R.id.spinnerKelas);
+        buttonRegister = (Button) findViewById(R.id.buttonRegister);
+
+
     }
 }
