@@ -2,9 +2,11 @@ package id.sch.smktelkom_mlg.tugas01.xirpl1025.formpendaftaran;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -33,6 +35,34 @@ public class MainActivity extends AppCompatActivity {
         spKelas = (Spinner) findViewById(R.id.spinnerKelas);
         buttonRegister = (Button) findViewById(R.id.buttonRegister);
 
-
+        buttonRegister.setOnClickListener(new View.OnClickListener() {
+                                              @Override
+                                              public void onClick(View view) {
+                                                  String nama = etNama.getText().toString();
+                                                  String tempat = etTempat.getText().toString();
+                                                  String tanggal = etTanggal.getText().toString();
+                                                  String hasil = null;
+                                                  if (rgJK.getCheckedRadioButtonId() != -1) {
+                                                      RadioButton rb = (RadioButton) findViewById(rgJK.getCheckedRadioButtonId());
+                                                      hasil = rb.getText().toString();
+                                                  }
+                                                  String output = "\nPilihan Kelas       : ";
+                                                  int startlen = output.length();
+                                                  if (cbTOEFL.isChecked())
+                                                      output += cbTOEFL.getText();
+                                                  if (cbTOEIC.isChecked())
+                                                      output += cbTOEIC.getText();
+                                                  if (cbIntr.isChecked())
+                                                      output += cbIntr.getText();
+                                                  if (cbReg.isChecked()) output += cbReg.getText();
+                                                  tvHasil.setText("Nama                    : " + nama +
+                                                          "\nTempat Lahir       : " + tempat +
+                                                          "\nTanggal Lahir      : " + tanggal +
+                                                          "\nJenis Kelamin     : " + hasil +
+                                                          output +
+                                                          "\nPilihan Waktu      : " + spKelas.getSelectedItem().toString());
+                                              }
+                                          }
+        );
     }
 }
