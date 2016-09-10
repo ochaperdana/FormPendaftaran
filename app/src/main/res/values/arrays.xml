@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="PilihKelas">
+        <item>11.30-13.00</item>
+        <item>13.30-15.00</item>
+        <item>15.30-17.00</item>
+        <item>17.45-19.15</item>
+    </string-array>
+</resources>
