@@ -8,6 +8,7 @@ Berikut adalah hasilnya :
 ![Screenshot 1](https://docs.google.com/uc?id=0B09XALl5QufvaHF1WnBnMjdsY3M)
 ![Screenshot 2](https://docs.google.com/uc?id=0B09XALl5QufvaFdfWFBmT1h0bnc)
 ![Screenshot 3](https://docs.google.com/uc?id=0B09XALl5Qufvcmp6SlpTcTB4VkU)
+![Screenshot 4](https://docs.google.com/uc?id=0B09XALl5QufvUW16VjBNUVpIb1k)
 
 <h1>IDENTITAS</h1>
 <h4>Nama : Ocha Putri Perdana Prihatina <br>
