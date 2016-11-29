@@ -17,4 +17,4 @@ NIS : 4796/1515.070 <br>
 Nama Sekolah : SMK Telkom Malang </h4>
 
 <h1>LINK APLIKASI</h1>
-https://drive.google.com/open?id=0B09XALl5QufveEh2VVlZZUlESFE
+https://drive.google.com/open?id=0B09XALl5QufvTmxhN1B3X1l5M00
