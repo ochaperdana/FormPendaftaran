@@ -38,31 +38,66 @@ public class MainActivity extends AppCompatActivity {
         buttonRegister.setOnClickListener(new View.OnClickListener() {
                                               @Override
                                               public void onClick(View view) {
-                                                  String nama = etNama.getText().toString();
-                                                  String tempat = etTempat.getText().toString();
-                                                  String tanggal = etTanggal.getText().toString();
-                                                  String hasil = null;
-                                                  if (rgJK.getCheckedRadioButtonId() != -1) {
-                                                      RadioButton rb = (RadioButton) findViewById(rgJK.getCheckedRadioButtonId());
-                                                      hasil = rb.getText().toString();
-                                                  }
-                                                  String output = "\nPilihan Kelas       : ";
-                                                  int startlen = output.length();
-                                                  if (cbTOEFL.isChecked())
-                                                      output += cbTOEFL.getText();
-                                                  if (cbTOEIC.isChecked())
-                                                      output += cbTOEIC.getText();
-                                                  if (cbIntr.isChecked())
-                                                      output += cbIntr.getText();
-                                                  if (cbReg.isChecked()) output += cbReg.getText();
-                                                  tvHasil.setText("Nama                    : " + nama +
-                                                          "\nTempat Lahir       : " + tempat +
-                                                          "\nTanggal Lahir      : " + tanggal +
-                                                          "\nJenis Kelamin     : " + hasil +
-                                                          output +
-                                                          "\nPilihan Waktu      : " + spKelas.getSelectedItem().toString());
+                                                  doProcess();
                                               }
                                           }
         );
+    }
+
+    private void doProcess() {
+        if (isValid()) {
+            String nama = etNama.getText().toString();
+            String tempat = etTempat.getText().toString();
+            String tanggal = etTanggal.getText().toString();
+            String hasil = null;
+            if (rgJK.getCheckedRadioButtonId() != -1) {
+                RadioButton rb = (RadioButton) findViewById(rgJK.getCheckedRadioButtonId());
+                hasil = rb.getText().toString();
+            }
+            String output = "\nPilihan Kelas       : ";
+            int startlen = output.length();
+            if (cbTOEFL.isChecked())
+                output += cbTOEFL.getText();
+            if (cbTOEIC.isChecked())
+                output += cbTOEIC.getText();
+            if (cbIntr.isChecked())
+                output += cbIntr.getText();
+            if (cbReg.isChecked()) output += cbReg.getText();
+            tvHasil.setText("Nama                    : " + nama +
+                    "\nTempat Lahir       : " + tempat +
+                    "\nTanggal Lahir      : " + tanggal +
+                    "\nJenis Kelamin     : " + hasil +
+                    output +
+                    "\nPilihan Waktu      : " + spKelas.getSelectedItem().toString());
+        }
+    }
+
+    private boolean isValid() {
+        boolean valid = true;
+        String nama = etNama.getText().toString();
+        String tanggal = etTanggal.getText().toString();
+        String tempat = etTempat.getText().toString();
+
+        if (nama.isEmpty()) {
+            etNama.setError("Nama Belum diisi");
+            valid = false;
+        } else if (nama.length() < 5) {
+            etNama.setError("Nama min 5 karakter");
+            valid = false;
+        }
+
+        if (tanggal.isEmpty()) {
+            etTanggal.setError("Tanggal lahir belum diisi");
+            valid = false;
+        }
+
+        if (tempat.isEmpty()) {
+            etTempat.setError("Tempat lahir belum diisi");
+            valid = false;
+        } else if (tempat.length() < 5) {
+            etTempat.setError("Tempat lahir tidak valid");
+            valid = false;
+        }
+        return valid;
     }
 }
